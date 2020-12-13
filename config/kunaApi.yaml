@@ -1,0 +1,4 @@
+parameters:
+    base_url: '%env(KUNA_BASE_URL)%'
+    endpoints:
+        live_market: {path: '/v3/tickers?symbols=market', method: 'GET'}
