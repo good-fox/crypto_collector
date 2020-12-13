@@ -17,6 +17,21 @@ class OneTestCommand extends Command
 {
     public const NAME = 'command:test';
 
+    /**
+     * @var string
+     */
+    protected $name;
+
+    /**
+     * OneTestCommand constructor.
+     * @param string $nameUser
+     */
+    public function __construct($nameUser = 'vadym')
+    {
+        parent::__construct();
+        $this->name = $nameUser;
+    }
+
     protected function configure()
     {
         $this
@@ -41,6 +56,7 @@ class OneTestCommand extends Command
         }
 
         $output->writeln($print);
+        $output->writeln('User: ' . $this->name);
 
         return self::SUCCESS;
     }
